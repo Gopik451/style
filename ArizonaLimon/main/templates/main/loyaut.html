@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>{{ title }}</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+</head>
+<body>
+	<aside>
+		<span class="logo">Arizona Limon</span>
+		<h3>Навигация</h3>
+		<ul>
+			<a href="{% url 'home' %}" class="navig"><li class="navig"><i class="fas fa-home"></i> Главная</li></a>
+			<a href="{% url 'rules' %}" class="navig"><li class="navig"><i class="fas fa-paper-plane"></i> Правила</li></a>
+			<a href="{% url 'news_home' %}" class="navig"><li class="navig"><i class="far fa-address-card"></i> Жалобы</li></a>
+			<a href="{% url 'create' %}" class="navig"><li class="navig"><i class="fas fa-plus-circle"></i> Пожаловатся</li></a>
+		</ul>
+	</aside>
+	<main>
+		{% block content %}
+		{% endblock %}
+	</main>
+</body>
+</html>
